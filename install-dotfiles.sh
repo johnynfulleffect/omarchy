@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ORIGINAL_DIR=$(pwd)/git
+ORIGINAL_DIR=$(pwd)
 REPO_URL="https://github.com/johnynfulleffect/dotfiles"
 REPO_NAME="dotfiles"
 
@@ -16,10 +16,10 @@ fi
 cd ~
 
 # Check if the repository already exists
-if [ -d "$REPO_NAME" ]; then
+if [ -d ~/git/"$REPO_NAME" ]; then
   echo "Repository '$REPO_NAME' already exists. Skipping clone"
 else
-  git clone "$REPO_URL"
+  git clone "$REPO_URL" ~/git/$REPO_NAME
 fi
 
 # Check if the clone was successful
