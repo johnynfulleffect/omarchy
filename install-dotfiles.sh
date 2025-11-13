@@ -16,10 +16,10 @@ fi
 cd ~
 
 # Check if the repository already exists
-if [ -d ~/git/"$REPO_NAME" ]; then
+if [ -d "$REPO_NAME" ]; then
   echo "Repository '$REPO_NAME' already exists. Skipping clone"
 else
-  git clone "$REPO_URL" ~/git/$REPO_NAME
+  git clone "$REPO_URL" $REPO_NAME
 fi
 
 # Check if the clone was successful
@@ -28,9 +28,12 @@ if [ $? -eq 0 ]; then
   rm -rf ~/.config/nvim ~/.config/alacritty/alacritty.toml
 
   cd "$REPO_NAME"
-  stow zshrc
+  stow zsh
   stow tmux
   stow nvim
+  stow p10k
+  stow github-copilot
+  stow alacritty
 else
   echo "Failed to clone the repository."
   exit 1
