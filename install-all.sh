@@ -13,6 +13,8 @@
 ./install-hyprland-overrides.sh
 ./install-fzf.sh
 ./install-ripgrep.sh
+./install-openvpn.sh
+./install-battheme.sh
 
 ./set-shell.sh
 
