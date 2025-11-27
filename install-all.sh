@@ -22,3 +22,4 @@
 
 # Remove packages
 ./uninstall-1password.sh
+./uninstall-webapp.sh
